@@ -8,14 +8,17 @@ description: |
   we live in tweetspace and your description wants to look good in the snap
   store.
 
+platforms:
+  amd64:
+
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
 parts:
-  librtlsdr:
-    plugin: cmake
+  ephemeral:
     source: https://github.com/ephemeral/ephemeral.git
     source-type: git
+    plugin: rust
 
 # apps: 
 #   rtl-tcp:
